@@ -48,7 +48,6 @@ header .header-top .social a:hover {
   color: #fff;
   transition: 0.1s ease-in;
 }
-/* ! hover edilende altdan xett getmeyini duzeltmek */
 
 header .header-top .logo h1 {
   font-size: 22px;
@@ -70,6 +69,7 @@ header .header-top form input {
   padding: 15px;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
+  font-family: "Roboto", sans-serif;
 }
 header .header-top form input::placeholder {
   font-family: "Roboto", sans-serif;
@@ -90,19 +90,30 @@ header .header-bottom nav ul {
   display: flex;
   justify-content: center;
 }
-header .header-bottom nav ul li {
-  margin-right: 30px;
+
+header .header-bottom nav ul li a {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+}
+header .header-bottom nav ul li a:hover {
+  color: #95adbe;
 }
 header .header-bottom nav ul li a::after {
   content: " ";
   display: block;
   height: 2px;
-  width: 0;
-  background: #95adbe;
-  transition: width 0.3s ease;
+  width: 100%;
+  background-color: #95adbe;
   position: absolute;
   bottom: 0;
   left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease-out;
+}
+header .header-bottom nav ul li a:hover::after {
+  transform: scaleX(1);
 }
 /* ? introduction */
 #introduction {
@@ -118,6 +129,7 @@ header .header-bottom nav ul li a::after {
   justify-content: center;
   align-content: center;
 }
+/* ! background image qizin basi tam gorunsun */
 
 #introduction .intro-top .intro-content {
   width: 75%;
@@ -162,10 +174,9 @@ header .header-bottom nav ul li a::after {
   flex-flow: row wrap;
   justify-content: center;
   position: absolute;
-  bottom: 55px;
+  top: -90px;
   left: 0;
 }
-
 #introduction .intro-bottom .card-container .card {
   max-width: 250px;
   display: flex;
@@ -174,8 +185,6 @@ header .header-bottom nav ul li a::after {
   align-items: center;
   margin: 15px;
 }
-
-/* ! responsive etmek flex-wrap ile */
 #introduction .intro-bottom .card .card-header {
   background-color: #efefef;
   width: 150px;
@@ -185,11 +194,33 @@ header .header-bottom nav ul li a::after {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  font-size: 40px;
+  position: relative;
+
 }
-#introduction .intro-bottom .card .card-header img {
-  width: 60px;
+#introduction .intro-bottom .card .card-header .icon {
+  z-index: 10;
 }
-/* ! ::after vermek ve hover edende yerinin ve background color deyishmesi */
+#introduction .intro-bottom .card .card-header .icon::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 30%;
+  right: 40px;
+  background-color: #ff7a5c;
+  z-index: -1;
+  border-radius: 50%;
+}
+#introduction .intro-bottom .card-container .card:hover .card-header {
+  background-color: #95adbe;
+}
+#introduction .intro-bottom .card-container .card:hover .icon::after {
+  background-color: #fff;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
 #introduction .intro-bottom .card .card-body {
   text-align: center;
 }
@@ -207,7 +238,7 @@ header .header-bottom nav ul li a::after {
 
 /* ? counter */
 #counter-section {
-  background-color: #e2e2e2;
+  background-color: #efefef;
   padding: 50px;
 }
 #counter-section .counter-container {
@@ -245,7 +276,6 @@ header .header-bottom nav ul li a::after {
   margin: 20px;
   height: 700px;
 }
-/* ! center them */
 #welcome .welcome-content .welcome-left img {
   width: 100%;
   height: auto;
@@ -654,13 +684,13 @@ footer .top .footer-content {
   display: flex;
   justify-content: center;
 }
-footer .top .footer-content .item{
+footer .top .footer-content .item {
   width: 20%;
   margin: 10px;
 }
 
 footer .top .footer-content .connect h4:hover {
- color: #95adbe;
+  color: #95adbe;
 }
 footer .top .footer-content .connect .social {
   display: flex;
@@ -685,16 +715,16 @@ footer .connect p {
   color: #cfcfcf;
   line-height: 30px;
 }
-footer ul li span{
-    color: #fff;
+footer ul li span {
+  color: #fff;
 }
-footer ul li a{
-    color: #cfcfcf;
+footer ul li a {
+  color: #cfcfcf;
 
   margin-bottom: 20px;
   display: inline-block;
   font-family: "Roboto", sans-serif;
-font-weight: 500;
+  font-weight: 500;
 }
 footer ul li span {
   margin-right: 10px;
@@ -705,8 +735,8 @@ footer .bottom {
   background-color: #000;
   padding: 50px 0;
 }
-footer .bottom .copyright{
- color: #8b8b8b;
- font-family: "Roboto", sans-serif;
-font-weight: 500;
+footer .bottom .copyright {
+  color: #8b8b8b;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
 }
