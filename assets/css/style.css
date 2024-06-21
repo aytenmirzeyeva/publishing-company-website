@@ -48,7 +48,6 @@ header .header-top .social a:hover {
   color: #fff;
   transition: 0.1s ease-in;
 }
-
 header .header-top .logo h1 {
   font-size: 22px;
 }
@@ -83,9 +82,7 @@ header .header-top form button {
   color: #fff;
   cursor: pointer;
 }
-header .header-bottom {
-  padding: 30px;
-}
+
 header .header-bottom nav ul {
   display: flex;
   justify-content: center;
@@ -129,7 +126,6 @@ header .header-bottom nav ul li a:hover::after {
   justify-content: center;
   align-content: center;
 }
-/* ! background image qizin basi tam gorunsun */
 
 #introduction .intro-top .intro-content {
   width: 75%;
@@ -196,7 +192,6 @@ header .header-bottom nav ul li a:hover::after {
   margin-bottom: 20px;
   font-size: 40px;
   position: relative;
-
 }
 #introduction .intro-bottom .card .card-header .icon {
   z-index: 10;
@@ -219,7 +214,7 @@ header .header-bottom nav ul li a:hover::after {
 #introduction .intro-bottom .card-container .card:hover .icon::after {
   background-color: #fff;
   transform: translateX(-50%);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-out;
 }
 #introduction .intro-bottom .card .card-body {
   text-align: center;
@@ -317,6 +312,7 @@ header .header-bottom nav ul li a:hover::after {
   color: #4c4c4c;
 }
 #books .cards-container {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -325,21 +321,22 @@ header .header-bottom nav ul li a:hover::after {
   display: flex;
   width: 30%;
   margin: 20px;
-  position: relative;
+  height: 340px;
 }
 #books .cards-container .card:hover {
   color: #fff;
   transition: 0.3s ease;
 }
-#books .cards-container .card-header {
-  background: url("../images/book-1.jpg.webp");
-  height: 340px;
-  width: 300px;
+
+#books .cards-container .card-header  {
+  width: 50%;
+  position: relative;
+  background: url("../images/books-section/book-1.jpg.webp");
   background-size: cover;
   background-position: center;
 }
-
 #books .cards-container .card-body {
+  width: 50%;
   display: flex;
   flex-direction: column;
   padding: 25px;
@@ -380,8 +377,8 @@ header .header-bottom nav ul li a:hover::after {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 2%;
-  left: 28%;
+  top: 10px;
+  right: 5px;
   visibility: hidden;
 }
 #books .cards-container .card .icons-container a {
@@ -402,10 +399,8 @@ header .header-bottom nav ul li a:hover::after {
 }
 #books .cards-container .card:hover .icons-container {
   visibility: visible;
-  transition: 0.2ms all ease;
-  /* ! transition baxmaq */
+  transition: 0.3s ease;
 }
-/* ! books responsive etmek  */
 
 /* ? testimonial */
 #testimonial {
@@ -469,6 +464,7 @@ header .header-bottom nav ul li a:hover::after {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 #testimonial .content .bottom .carousel .items-container .item {
   background-color: #fff;
@@ -587,7 +583,7 @@ header .header-bottom nav ul li a:hover::after {
 #blog .blog-headers {
   margin-bottom: 30px;
 }
-#blog .header-lg {
+#blog .blog-headers h2 {
   font-size: 50px;
   font-weight: 500;
   color: #4c4c4c;
@@ -595,6 +591,7 @@ header .header-bottom nav ul li a:hover::after {
 #blog .blog-content .card-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 #blog .blog-content .card-container .card {
   margin: 15px;
@@ -647,7 +644,7 @@ header .header-bottom nav ul li a:hover::after {
   font-size: 11px;
   font-weight: 400;
   font-family: "Roboto", sans-serif;
-  color: #abaaa8;
+  color: #919093;
   letter-spacing: 2px;
 }
 #blog .blog-content .card-container .card .bottom p {
@@ -658,12 +655,11 @@ header .header-bottom nav ul li a:hover::after {
 
 #blog .blog-content .card-container .card:hover .date {
   background-color: #95adbe;
+  transition: 0.3s ease;
 }
 #blog .blog-content .card-container .card:hover .day {
-  color: #fff;
+  color: #fff !important;
 }
-
-/* ! color deyishmir */
 
 /* ? footer */
 footer {
@@ -715,19 +711,25 @@ footer .connect p {
   color: #cfcfcf;
   line-height: 30px;
 }
-footer ul li span {
-  color: #fff;
+
+footer {
+  font-weight: 500;
+}
+footer ul li {
+  color: #cfcfcf;
+  font-family: "Roboto", sans-serif;
+  line-height: 25px;
+  margin-bottom: 20px;
 }
 footer ul li a {
-  color: #cfcfcf;
-
-  margin-bottom: 20px;
-  display: inline-block;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  display: block;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
 }
 footer ul li span {
   margin-right: 10px;
+  color: #fff;
 }
 
 footer .bottom {
@@ -738,5 +740,4 @@ footer .bottom {
 footer .bottom .copyright {
   color: #8b8b8b;
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
 }
